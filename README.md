@@ -1,22 +1,37 @@
-Designing Perceptual Puzzles by Differentiating Probabilistic Programs
-Objective
+# Designing Perceptual Puzzles by Differentiating Probabilistic Programs
 
-This repository aims to create new visual illusions by utilizing probabilistic programming models. These models are designed to mimic and analyze human visual perception, allowing us to generate adversarial examples and visual illusions that challenge our perception of reality.
-Key Concepts
-1. Probabilistic Models of Perception
+### Objective
+Creating **new visual illusions** using **probabilistic programming models** that mimic and analyze human visual perception.
 
-    Bayesian Inference: Human vision is modeled as a Bayesian inference process, where the brain uses prior knowledge to interpret visual inputs.
-    Markov Chain Monte Carlo (MCMC): MCMC sampling is used to approximate the posterior distribution of visual scenes based on the stimuli.
+---
 
-2. Differentiable Probabilistic Programming Language (PPL)
+### Key Concepts
 
-    Differentiation through Inference: This project leverages a differentiable probabilistic programming language (PPL), enabling automatic differentiation through the inference process.
-    Gradient Descent Optimization: Using gradient descent, the program generates illusions that fool probabilistic models of perception.
+#### 1. Probabilistic Models of Perception
+- **Bayesian Inference**: Human vision is modeled as a Bayesian inference process, where the brain interprets visual stimuli based on prior beliefs.
+- **Markov Chain Monte Carlo (MCMC)**: MCMC is used to sample from a distribution and estimate the posterior distribution of scenes.
 
-3. Adversarial Examples
+#### 2. Differentiable Probabilistic Programming Language (PPL)
+- **Differentiation through Inference**: Enables automatic differentiation through inference processes in probabilistic models.
+- **Gradient Descent Optimization**: Uses gradient descent to generate illusions that challenge human perception.
 
-    Adversarial Visual Inputs: These are intentionally designed inputs that cause models of perception to make incorrect or unexpected inferences.
+#### 3. Adversarial Examples
+- **Purpose**: These examples are designed to fool perception models, causing incorrect or unexpected scene interpretations.
 
-4. Inverse Inverse Rendering
+#### 4. Inverse Inverse Rendering
+- **Concept**: Rather than rendering a scene from an image, this searches for images that cause perceptual models to interpret scenes incorrectly, leading to visual illusions.
 
-    Purpose: This method searches for images that cause incorrect scene interpretation by the model, leading to perceptual puzzles and illusions.
+---
+
+### Example Code Snippets
+
+#### 1. Writing a Generative Model
+
+This probabilistic model samples a true temperature \( T \) and noisy measurement \( M \) using Bayesian inference.
+
+```python
+def model(M):
+    sample T ~ N(70, 5)   # Sample true temperature from a normal distribution
+    observe M from N(T, 2) # Observe a noisy measurement M
+    return T
+
