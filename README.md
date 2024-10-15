@@ -23,15 +23,4 @@ Creating **new visual illusions** using **probabilistic programming models** tha
 
 ---
 
-### Example Code Snippets
-
-#### 1. Writing a Generative Model
-
-This probabilistic model samples a true temperature \( T \) and noisy measurement \( M \) using Bayesian inference.
-
-```python
-def model(M):
-    sample T ~ N(70, 5)   # Sample true temperature from a normal distribution
-    observe M from N(T, 2) # Observe a noisy measurement M
-    return T
 
